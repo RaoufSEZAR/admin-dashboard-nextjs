@@ -23,8 +23,8 @@ export const addUser = async (formData: any) => {
 			password: hashedPassword,
 			phone,
 			address,
-			isAdmin,
-			isActive,
+			isAdmin: isAdmin == "true" ? true : false,
+			isActive: isActive == "true" ? true : false,
 		});
 
 		await newUser.save();
@@ -50,8 +50,8 @@ export const updateUser = async (formData: any) => {
 			password,
 			phone,
 			address,
-			isAdmin,
-			isActive,
+			isAdmin: isAdmin == "true" ? true : false,
+			isActive: isActive == "true" ? true : false,
 		};
 
 		Object.keys(updateFields).forEach(
